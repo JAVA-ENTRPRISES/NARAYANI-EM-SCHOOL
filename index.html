@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narayani English Medium School | Learn with Joy, Lead with Values</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --nm-primary: #0f4c81;
+            --nm-secondary: #00a7b5;
+            --nm-accent: #ffc857;
+            --nm-surface: #ffffff;
+            --nm-bg: #f4f8ff;
+            --nm-text: #1d2a3a;
+            --nm-soft: #6b7788;
+        }
+
+        body.page-home {
+            font-family: "Nunito", sans-serif;
+            color: var(--nm-text);
+            background: var(--nm-bg);
+        }
+
+        .nm-section {
+            padding: 4.8rem 0;
+        }
+
+        .nm-badge {
+            display: inline-block;
+            background: #eaf6ff;
+            color: var(--nm-primary);
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.45rem 0.85rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        .nm-heading {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            line-height: 1.24;
+            margin-bottom: 0.85rem;
+        }
+
+        .nm-hero {
+            padding: 5.5rem 0 4rem;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(0, 167, 181, 0.22), transparent 42%),
+                radial-gradient(circle at 90% 10%, rgba(255, 200, 87, 0.35), transparent 40%),
+                linear-gradient(135deg, #0f4c81 0%, #1e6ca5 55%, #2d8bbf 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nm-hero h1 {
+            font-size: clamp(2rem, 4.2vw, 3.3rem);
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .nm-hero p {
+            color: #e9f3ff;
+            max-width: 660px;
+            font-size: 1.05rem;
+        }
+
+        .nm-btn-main,
+        .nm-btn-alt {
+            border-radius: 999px;
+            padding: 0.72rem 1.35rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: all 0.25s ease;
+        }
+
+        .nm-btn-main {
+            background: var(--nm-accent);
+            color: #172437;
+        }
+
+        .nm-btn-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(255, 200, 87, 0.38);
+            color: #172437;
+        }
+
+        .nm-btn-alt {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            color: #fff;
+        }
+
+        .nm-btn-alt:hover {
+            background: rgba(255, 255, 255, 0.16);
+            color: #fff;
+        }
+
+        .nm-hero-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 1.35rem;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+        }
+
+        .nm-hero-card .metric {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            text-align: center;
+            padding: 1rem;
+            height: 100%;
+        }
+
+        .nm-hero-card .metric strong {
+            font-size: 1.42rem;
+            display: block;
+        }
+
+        .nm-story-card,
+        .nm-pillar,
+        .nm-program,
+        .nm-feature,
+        .nm-step,
+        .nm-cta {
+            background: var(--nm-surface);
+            border-radius: 18px;
+            box-shadow: 0 12px 28px rgba(15, 76, 129, 0.08);
+        }
+
+        .nm-story-card,
+        .nm-cta {
+            padding: 1.5rem;
+        }
+
+        .nm-pillar {
+            height: 100%;
+            padding: 1.3rem;
+            border-top: 5px solid var(--nm-secondary);
+        }
+
+        .nm-pillar i,
+        .nm-feature i {
+            color: var(--nm-primary);
+            font-size: 1.3rem;
+        }
+
+        .nm-program {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .nm-program .top {
+            background: linear-gradient(120deg, var(--nm-primary), #246ca5);
+            color: #fff;
+            padding: 1rem 1.2rem;
+        }
+
+        .nm-program .body {
+            padding: 1.2rem;
+        }
+
+        .nm-feature {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.2rem;
+            height: 100%;
+        }
+
+        .nm-step {
+            padding: 1.15rem 1.2rem;
+            border-left: 5px solid var(--nm-accent);
+            height: 100%;
+        }
+
+        .nm-quote {
+            background: linear-gradient(135deg, #102846, #1f4d7e);
+            border-radius: 18px;
+            color: #eaf4ff;
+            padding: 1.4rem;
+            height: 100%;
+        }
+
+        .nm-quote i {
+            color: var(--nm-accent);
+            font-size: 1.5rem;
+        }
+
+        .nm-cta {
+            background: linear-gradient(135deg, #00a7b5 0%, #1182ac 100%);
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nm-muted {
+            color: var(--nm-soft);
+        }
+
+        @media (max-width: 991px) {
+            .nm-section {
+                padding: 3.8rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="page-home">
+    <div id="header-placeholder"></div>
+    <div id="authpanel-placeholder"></div>
+
+    <section id="home" class="nm-hero">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7">
+                    <span class="nm-badge text-black border border-light-subtle mt-3">Narayani English Medium School</span>
+                    <h1>Where Curiosity Becomes Confidence</h1>
+                    <p>Narayani English Medium School offers a caring, future-focused learning environment that blends strong academics, communication skills, creativity, and values.</p>
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                        <a href="admission.html" class="nm-btn-main"><i class="bi bi-journal-check"></i> Apply for Admission</a>
+                        <a href="#about" class="nm-btn-alt"><i class="bi bi-building"></i> Explore Our Campus</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="nm-hero-card">
+                        <h5 class="fw-bold mb-3">School Snapshot</h5>
+                        <div class="row g-2">
+                            <div class="col-6"><div class="metric"><strong>30+</strong><small>Qualified Teachers</small></div></div>
+                            <div class="col-6"><div class="metric"><strong>18</strong><small>Smart Classrooms</small></div></div>
+                            <div class="col-6"><div class="metric"><strong>12+</strong><small>Activity Clubs</small></div></div>
+                            <div class="col-6"><div class="metric"><strong>1:25</strong><small>Teacher Ratio</small></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="nm-section">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-6">
+                    <div class="nm-story-card h-100">
+                        <span class="nm-badge">About Narayani</span>
+                        <h2 class="nm-heading">Nurturing Every Child with Purpose and Care</h2>
+                        <p class="nm-muted mb-3">Our school is built on the belief that each student learns best in a joyful and disciplined atmosphere where teachers mentor, inspire, and guide with personal attention.</p>
+                        <p class="mb-0">From foundational learning to leadership preparation, Narayani English Medium School supports children in becoming capable learners and responsible citizens.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3 h-100">
+                        <div class="col-12">
+                            <div class="nm-pillar">
+                                <h5 class="fw-bold"><i class="bi bi-eye-fill me-2"></i>Our Vision</h5>
+                                <p class="mb-0 nm-muted">To create confident, compassionate, and competent learners ready for tomorrow.</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="nm-pillar">
+                                <h5 class="fw-bold"><i class="bi bi-compass-fill me-2"></i>Our Mission</h5>
+                                <p class="mb-0 nm-muted">To deliver modern education with values, communication excellence, and all-round development.</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="nm-pillar">
+                                <h5 class="fw-bold"><i class="bi bi-stars me-2"></i>Our Promise</h5>
+                                <p class="mb-0 nm-muted">Every child is seen, supported, and encouraged to discover their unique potential.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nm-section pt-0">
+        <div class="container">
+            <span class="nm-badge">Academic Journey</span>
+            <h2 class="nm-heading">Progressive Learning from Primary to Secondary</h2>
+            <div class="row g-4 mt-1">
+                <div class="col-lg-4">
+                    <div class="nm-program">
+                        <div class="top"><strong>Foundation Stage</strong></div>
+                        <div class="body">
+                            <h5>Classes I-V</h5>
+                            <p class="nm-muted mb-0">Strong basics in reading, writing, numeracy, communication, and guided exploration.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="nm-program">
+                        <div class="top"><strong>Development Stage</strong></div>
+                        <div class="body">
+                            <h5>Classes VI-VIII</h5>
+                            <p class="nm-muted mb-0">Subject depth, project-based learning, teamwork, and analytical thinking skills.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="nm-program">
+                        <div class="top"><strong>Excellence Stage</strong></div>
+                        <div class="body">
+                            <h5>Classes IX-X</h5>
+                            <p class="nm-muted mb-0">Board preparation, exam strategy, mentorship, and career-awareness sessions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nm-section">
+        <div class="container">
+            <span class="nm-badge">Beyond Classroom</span>
+            <h2 class="nm-heading">Clubs and Activities for Holistic Growth</h2>
+            <div class="row g-3 mt-1">
+                <div class="col-lg-6">
+                    <div class="nm-feature">
+                        <i class="bi bi-mic-fill"></i>
+                        <div>
+                            <h5 class="fw-bold">Public Speaking Club</h5>
+                            <p class="mb-0 nm-muted">Regular stage activities, debates, and spoken English practice sessions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="nm-feature">
+                        <i class="bi bi-trophy-fill"></i>
+                        <div>
+                            <h5 class="fw-bold">Sports and Wellness</h5>
+                            <p class="mb-0 nm-muted">Daily physical activity, team sports, fitness drills, and healthy routines.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="nm-feature">
+                        <i class="bi bi-palette-fill"></i>
+                        <div>
+                            <h5 class="fw-bold">Arts and Creativity</h5>
+                            <p class="mb-0 nm-muted">Drawing, music, dance, and events that encourage creative expression.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="nm-feature">
+                        <i class="bi bi-cpu-fill"></i>
+                        <div>
+                            <h5 class="fw-bold">Innovation and Technology</h5>
+                            <p class="mb-0 nm-muted">Hands-on projects and digital exposure to build practical future-ready skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nm-section pt-0">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-7">
+                    <span class="nm-badge">Admission Process 2026-27</span>
+                    <h2 class="nm-heading">Simple Steps to Join Narayani</h2>
+                    <div class="row g-3 mt-1">
+                        <div class="col-md-6">
+                            <div class="nm-step">
+                                <h6 class="fw-bold">1. Campus Interaction</h6>
+                                <p class="mb-0 nm-muted">Visit the campus and meet our admission counselors.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="nm-step">
+                                <h6 class="fw-bold">2. Registration</h6>
+                                <p class="mb-0 nm-muted">Submit the admission form and required documents.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="nm-step">
+                                <h6 class="fw-bold">3. Student Assessment</h6>
+                                <p class="mb-0 nm-muted">Short age-appropriate interaction for class placement.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="nm-step">
+                                <h6 class="fw-bold">4. Confirmation</h6>
+                                <p class="mb-0 nm-muted">Complete enrollment and receive orientation details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="nm-quote">
+                        <i class="bi bi-chat-quote-fill"></i>
+                        <h5 class="fw-bold mt-2">Parent Testimonial</h5>
+                        <p class="mb-2">"Narayani School helped our child become more confident in English communication and more active in academics and activities."</p>
+                        <p class="mb-0"><strong>- Parent, Narayani English Medium School</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nm-section pt-0">
+        <div class="container">
+            <div class="nm-cta">
+                <div>
+                    <h3 class="fw-bold mb-1">Start Your Child's Learning Journey with Narayani</h3>
+                    <p class="mb-0">Book a campus visit today to explore academics, facilities, and admission support.</p>
+                </div>
+                <a href="contact.html" class="nm-btn-main"><i class="bi bi-calendar2-check"></i> Book Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <button id="backToTop" class="btn btn-primary back-to-top" type="button">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/load-components.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
